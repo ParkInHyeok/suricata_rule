@@ -49,6 +49,15 @@ alert dns any any -> any any (msg:"mtbucks rules"; dns_query; content:"mtbucks";
 alert dns any any -> any any (msg:"phishtank"; dns_query; content:"phishtank"; nocase; sid:9;)
 alert dns any any -> any any (msg:"hitomi"; dns_query; content:"hitomi"; nocase; sid:10;)
 
+#https/xxxx.com/yyy/ : 는 막으려면 https 전체다를 막아야하는 그러면 가용성에 위배되므로 막을수 없고 그대로 두었습니다.
+# 못막는링크 : https://www.facebook.com/profile.php?id=100019007882633
+#	       https://www.opioids.com/offshorepharmacy/index.html
+#	       https://yobit.net/en/dice/
+
+
+
+
+
 
 #https://twiter.com/mb18noma 이것은 못막음 ssl 을 까보면 모를까 기본적으로 암호화하면 모를까 못막는다.
 #(twiter.com을 전부다 막던지 아니면 아예 막지말던지 ( https들어가면 왜냐하면 암호화가 되기 때문에)
