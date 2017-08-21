@@ -1,0 +1,56 @@
+#http
+alert tcp any any -> any 80 (msg:"gilgil rule"; content:"GET /"; content:"Host: www.gilgil.net"; sid:10001; rev:1;)
+alert tcp any any -> any 80 (msg:"naver rule"; content:"GET /"; content:"Host: www.naver.com"; sid:10002; rev:1;)
+alert tcp any any -> any 80 (msg:"snoopspy rule"; content:"GET /download"; content:"Host: snoopspy.com"; sid:10003; rev:1;)
+alert tcp any any -> any 80 (msg:"bob.wiki rule"; content:"GET /wiki"; content:"Host: kitribob.wiki"; sid:10004; rev:1;)
+alert tcp any any -> any 80 (msg:"kass rule"; content:"GET /"; content:"Host: kass.org.kp"; sid:10005; rev:1;)
+alert tcp any any -> any 80 (msg:"kcna.kp rule"; content:"GET /"; content:"Host: kcna.kp"; sid:10006; rev:1;)
+alert tcp any any -> any 80 (msg:"ks8282 rule"; content:"GET /"; content:"Host: ks8282.com"; sid:10007; rev:1;)
+alert tcp any any -> any 80 (msg:"naevr rule"; content:"GET /"; content:"Host: naevr.com"; sid:10008; rev:1;)
+alert tcp any any -> any 80 (msg:"ks8282 rule"; content:"GET /"; content:"Host: ks8282.com"; sid:10009; rev:1;)
+alert tcp any any -> any 80 (msg:"naver6 rule"; content:"GET /"; content:"Host: naver6.com"; sid:10010; rev:1;)
+alert tcp any any -> any 80 (msg:"onaratv rule"; content:"GET /"; content:"Host: onaratv.com"; sid:10011; rev:1;)
+alert tcp any any -> any 80 (msg:"pornpros rule"; content:"GET /"; content:"Host: pornpros.com"; sid:10012; rev:1;)
+alert tcp any any -> any 80 (msg:"rodong rule"; content:"GET /"; content:"Host: rodong.rep.kp"; sid:10013; rev:1;)
+alert tcp any any -> any 80 (msg:"uriminzokkiri rule"; content:"GET /"; content:"Host: uriminzokkiri.com"; sid:10014; rev:1;)
+alert tcp any any -> any 80 (msg:"4shared rule"; content:"GET /"; content:"Host: 4shared.com"; sid:10015; rev:1;)
+alert tcp any any -> any 80 (msg:"bamwar25 rule"; content:"GET /"; content:"Host: www.bamwar25.com"; sid:10016; rev:1;)
+alert tcp any any -> any 80 (msg:"faa25 rule"; content:"GET /"; content:"Host: www.faa25.com"; sid:10017; rev:1;)
+alert tcp any any -> any 80 (msg:"kimmadam rule"; content:"GET /"; content:"Host: www.kimmadam.net"; sid:10018; rev:1;)
+alert tcp any any -> any 80 (msg:"minjok rule"; content:"GET /"; content:"Host: www.minjok.com"; sid:10019; rev:1;)
+alert tcp any any -> any 80 (msg:"narutoxxx rule"; content:"GET /"; content:"Host: www.narutoxxx.com"; sid:10020; rev:1;)
+alert tcp any any -> any 80 (msg:"naver.cm rule"; content:"GET /"; content:"Host: www.naver.cm"; sid:10021; rev:1;)
+alert tcp any any -> any 80 (msg:"ryomyong rule"; content:"GET /"; content:"Host: www.ryomyong.com"; sid:10022; rev:1;)
+alert tcp any any -> any 80 (msg:"sedisk rule"; content:"GET /"; content:"Host: sedisk.com"; sid:10023; rev:1;)
+alert tcp any any -> any 80 (msg:"sk386 rule"; content:"GET /"; content:"Host: www.sk386.com"; sid:10024; rev:1;)
+alert tcp any any -> any 80 (msg:"tcosc rule"; content:"GET /"; content:"Host: www.tcosc.net"; sid:10025; rev:1;)
+alert tcp any any -> any 80 (msg:"torenzoa rule"; content:"GET /"; content:"Host: www.torenzoa.net"; sid:10026; rev:1;)
+alert tcp any any -> any 80 (msg:"umj262 rule"; content:"GET /"; content:"Host: www.umj262.com"; sid:10027; rev:1;)
+alert tcp any any -> any 80 (msg:"uriminzokkiri rule"; content:"GET /"; content:"Host: www.uriminzokkiri.com"; sid:10028; rev:1;)
+alert tcp any any -> any 80 (msg:"winclub88 rule"; content:".html HTTP"; content:"Host: www.winclub88.com"; sid:10029; rev:1;)
+alert tcp any any -> any 80 (msg:"gilgil * mp4 rule"; content:".mp4 HTTP"; content:"Host: test.gilgil.net"; sid:10030; rev:1;)
+alert tcp any any -> any 80 (msg:"linoit rule"; content:"GET /users/men1212/canvases/19%EA%B8%88%20 HTTP"; content:"Host: www.linoit.com"; sid:10031; rev:1;)
+alert tcp any any -> any 80 (msg:"ilbe rule"; content:"GET /"; content:"Host: www.ilbe.com"; sid:10032; rev:1;)
+
+
+#http -> https
+alert tcp any any -> any 80 (msg:"ladder.named rule"; content:"GET /last_bet_rate?"; content:"Host: ladder.named.com"; sid:10033; rev:1;)
+
+
+#https
+alert dns any any -> any any (msg:"mujige53770.wixsite rules"; dns_query; content:"mujige53770.wixsite"; nocase; sid:1;)
+alert dns any any -> any any (msg:"graphgame rules"; dns_query; content:"graphgame"; nocase; sid:2;)
+alert dns any any -> any any (msg:"4shared rules"; dns_query; content:"4shared"; nocase; sid:3;)
+alert dns any any -> any any (msg:"sex rules"; dns_query; content:"sex"; nocase; sid:4;)
+alert dns any any -> any any (msg:"torrenthaja rules"; dns_query; content:"torrenthaja"; nocase; sid:5;)
+alert dns any any -> any any (msg:"torrentkim10 rules"; dns_query; content:"torrentkim10"; nocase; sid:6;)
+alert dns any any -> any any (msg:"webtoon.bamtoki rules"; dns_query; content:"webtoon.bamtoki"; nocase; sid:7;)
+alert dns any any -> any any (msg:"mtbucks rules"; dns_query; content:"mtbucks"; nocase; sid:8;)
+alert dns any any -> any any (msg:"phishtank"; dns_query; content:"phishtank"; nocase; sid:9;)
+alert dns any any -> any any (msg:"hitomi"; dns_query; content:"hitomi"; nocase; sid:10;)
+
+
+#https://twiter.com/mb18noma 이것은 못막음 ssl 을 까보면 모를까 기본적으로 암호화하면 모를까 못막는다.
+#(twiter.com을 전부다 막던지 아니면 아예 막지말던지 ( https들어가면 왜냐하면 암호화가 되기 때문에)
+
+#SIN : 이것을 보고 패턴을 만들어도됨
